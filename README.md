@@ -29,7 +29,7 @@ However, the model did not perform impressively when compared to models using PC
 
 <img width="862" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/abad37fa-4336-46d8-9da1-9f9137e87253">
 
-Table 1 Table of Mean Absolute Error and R2 values for ICA, PCA, and PLS models for predicting each trait.
+<b>Table 1</b> Table of Mean Absolute Error and R2 values for ICA, PCA, and PLS models for predicting each trait.
 
 The MAE of ICA is reliably within the same order as PCA and PLS. However, the R2 of ICA is consistently lower, with the exception of the ICA model’s R2 being greater than the PCA model’s R2 for Neutrophils. Unfortunately, outperforming the established methods for a single trait does not validate the use of ICA for regression modeling. 
 While the model was able to predict some traits to a moderate degree, the other two methods proved to be more effective. Because ICA is traditionally used on time series data, the data needed far more pre-processing and the pipeline in its current form requires more work from the user. This, paired with the variable quality of the component clusters and unimpressive predictive power makes ICA a poor method for processing methylation data.
@@ -52,7 +52,7 @@ To determine cluster quality, each cluster received a score between zero and one
 
 <img width="642" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/6ac54026-ef52-4a33-9fc4-d23648ac7395">
 
-Fig. 2 Depicts clusters sorted by scores. The first twelve clusters are considered to be stable. 
+<b>Fig. 2</b> Depicts clusters sorted by scores. The first twelve clusters are considered to be stable. 
 
 Trait correlation
 
