@@ -39,10 +39,10 @@ Data
 
 The ICA program was tested using a methylation matrix, and a matrix of traits associated with those individuals. The methylation matrix was composed of lung and kidney samples (n=153) and related to the percentage of methylation of targeted sites (n=13770). A dataset containing biomarkers for each individual was provided in conjunction with the methylation data.
 
-#Model
+# Model
 The ICA model was based on the FastICA function from the scikit-learn Python library. Because ICA is an unsupervised learning algorithm with a random state, the model was fitted multiple times using a bootstrapping method. The unmixing matrices from each iteration were stored for later analysis.
 
-#Clustering
+Clustering
 
 Each iteration of the ICA algorithm was analyzed and clustered by the dissimilarity, , of its components using hierarchical clustering methods provided by the scipy library. The data was further organized by grouping independent components by how dissimilar they are from all the other components using the fcluster function and the ‘distance’ criterion. For each cluster, the centrotype was calculated by finding the component that is the most similar to the other components in its cluster.  
 To determine cluster quality, each cluster received a score between zero and one based on its compactness and isolation from other clusters. Scores below a chosen threshold (s=0.9) were considered ‘unstable.’ Centrotypes from ‘stable’ clusters were considered to be representative samples of highly reproducible independent components. 
@@ -50,7 +50,7 @@ To determine cluster quality, each cluster received a score between zero and one
 PICTURE!!!!!
 Fig. 2 Depicts clusters sorted by scores. The first twelve clusters are considered to be stable. 
 
-#Trait correlation
+Trait correlation
 
 The impact of each stable component on individual traits was measured using a correlation matrix. To analyze the weighted contribution of individual methylation sites on highly correlated traits, the centrotype of the correlated ‘stable’ cluster was matched to its unmixing matrix. Sites were added to a list if their weighted contribution was greater than an arbitrary threshold. This threshold was tuned to isolate increasingly important methylation sites. 
 
