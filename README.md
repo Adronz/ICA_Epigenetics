@@ -19,7 +19,7 @@ Stable independent components were used to make a correlation matrix (Fig. 1) wi
 
 <img width="699" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/296321be-5635-4b1c-abaa-10b86978cedb">
 
-<b>Fig 1.<b> IC x trait correlation matrix
+<b>Fig 1.</b> IC x trait correlation matrix
 Potentially important methylation sites were found by iterating through the contribution weights of the component’s unmixing matrix. A shortened list was created by removing methylation sites that did not have a contribution of greater than 0.002. IC5 had 30 such sites, IC6 had 159, and IC8 had 107. The identified methylation sites were analyzed using Cistrome-Go to elucidate the associated genetic and metabolic pathways. The pipeline found meaningful pathways from methylation data, which could be further analyzed in another experiment. 
 
 Model Prediction
