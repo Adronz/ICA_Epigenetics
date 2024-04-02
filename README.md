@@ -47,7 +47,7 @@ Clustering
 Each iteration of the ICA algorithm was analyzed and clustered by the dissimilarity, , of its components using hierarchical clustering methods provided by the scipy library. The data was further organized by grouping independent components by how dissimilar they are from all the other components using the fcluster function and the ‘distance’ criterion. For each cluster, the centrotype was calculated by finding the component that is the most similar to the other components in its cluster.  
 To determine cluster quality, each cluster received a score between zero and one based on its compactness and isolation from other clusters. Scores below a chosen threshold (s=0.9) were considered ‘unstable.’ Centrotypes from ‘stable’ clusters were considered to be representative samples of highly reproducible independent components. 
 
-[Cluster Quality](https://imgur.com/a/ofwjDhu)
+![Cluster Quality](https://imgur.com/a/ofwjDhu)
 Fig. 2 Depicts clusters sorted by scores. The first twelve clusters are considered to be stable. 
 
 Trait correlation
