@@ -39,7 +39,7 @@ Data
 
 The ICA program was tested using a methylation matrix, and a matrix of traits associated with those individuals. The methylation matrix was composed of lung and kidney samples (n=153) and related to the percentage of methylation of targeted sites (n=13770). A dataset containing biomarkers for each individual was provided in conjunction with the methylation data.
 
-# Model
+## Model
 The ICA model was based on the FastICA function from the scikit-learn Python library. Because ICA is an unsupervised learning algorithm with a random state, the model was fitted multiple times using a bootstrapping method. The unmixing matrices from each iteration were stored for later analysis.
 
 Clustering
