@@ -18,6 +18,7 @@ Stable independent components were used to make a correlation matrix (Fig. 1) wi
 
 
 <img width="699" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/296321be-5635-4b1c-abaa-10b86978cedb">
+
 Fig 1. IC x trait correlation matrix
 Potentially important methylation sites were found by iterating through the contribution weights of the component’s unmixing matrix. A shortened list was created by removing methylation sites that did not have a contribution of greater than 0.002. IC5 had 30 such sites, IC6 had 159, and IC8 had 107. The identified methylation sites were analyzed using Cistrome-Go to elucidate the associated genetic and metabolic pathways. The pipeline found meaningful pathways from methylation data, which could be further analyzed in another experiment. 
 
@@ -27,6 +28,7 @@ The stable independent components were inputted into a Lasso regression model to
 However, the model did not perform impressively when compared to models using PCA or PLS. The ICA model performed as well as or slightly worse than the PCA and PLS models. This was measured by comparing the Mean Absolute Error (MAE) and R2 values of ICA, PCA, and PLS models for each trait (Table 1).
 
 <img width="862" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/abad37fa-4336-46d8-9da1-9f9137e87253">
+
 Table 1 Table of Mean Absolute Error and R2 values for ICA, PCA, and PLS models for predicting each trait.
 
 The MAE of ICA is reliably within the same order as PCA and PLS. However, the R2 of ICA is consistently lower, with the exception of the ICA model’s R2 being greater than the PCA model’s R2 for Neutrophils. Unfortunately, outperforming the established methods for a single trait does not validate the use of ICA for regression modeling. 
@@ -49,6 +51,7 @@ Each iteration of the ICA algorithm was analyzed and clustered by the dissimilar
 To determine cluster quality, each cluster received a score between zero and one based on its compactness and isolation from other clusters. Scores below a chosen threshold (s=0.9) were considered ‘unstable.’ Centrotypes from ‘stable’ clusters were considered to be representative samples of highly reproducible independent components. 
 
 <img width="642" alt="image" src="https://github.com/Adronz/ICA_Epigenetics/assets/33525795/6ac54026-ef52-4a33-9fc4-d23648ac7395">
+
 Fig. 2 Depicts clusters sorted by scores. The first twelve clusters are considered to be stable. 
 
 Trait correlation
