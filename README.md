@@ -4,14 +4,14 @@ This project investigates the efficacy of Independent Component Analysis (ICA), 
 Keywords: Independent Component Analysis, methylation, biological traits, computational biology, predictive modeling, Principal Component Analysis, Partial Least Squares, epigenetics.
 
 
-Introduction
+## Introduction
 
 Independent Component Analysis is an unsupervised learning algorithm developed primarily by the Finnish computer scientist Aapo Hyvärinen. Since its creation, ICA has been a powerful tool in the field of signal processing. ICA is commonly used in neuroscience, but it is unclear why other areas of computational biology have not adopted it. Computational epigenetics frequently uses PCA and PLS to process or preprocess data sets. However, ICA has been largely neglected by the field. ICA has traditionally been used for processing time series data such as EEG, fMRI, and acoustics [2].
 ICA separates signals by assuming non-gaussianity to find a linear representation that makes the signals as statistically independent as possible [1]. ICA seeks to minimize mutual information between each Independent Component (IC). The most basic application of this is illustrated by “The Cocktail Party Problem.” If a single microphone was placed in a crowded room, the sound signal would contain signals from many sources. ICA can be used to separate the individual sources to reproduce a single speaking voice. 
 Epigenetics is a quickly growing field of study, but it has lagged behind genetic studies due to its more recent discovery. Changes to DNA methylation can be caused by environmental factors as well as natural processes like aging, making methylome analysis incredibly important. By extension, the methods by which the methylome is analyzed are also important. By treating DNA methylation as a signal, it is possible to use ICA to glean insight into its impact on health outcomes. The goal of this project was to show that ICA can be used to identify groups of highly influential methylation sites that modulate biological traits.
 
  
-Results
+## Results
 
 Trait Correlation
 Stable independent components were used to make a correlation matrix (Fig. 1) with the quantified traits of the individuals. The independent components are the centrotypes of the bootstrapped ICA pipeline. Each component is maximally independent from the others, and using the components associated with the unmixing matrix revealed methylation sites that were more strongly associated with individual traits. IC5, IC6, and IC8 were further examined because of their strong correlation.
@@ -33,7 +33,7 @@ While the model was able to predict some traits to a moderate degree, the other 
 
 
 
-Methods
+## Methods
 
 Data 
 
@@ -59,13 +59,13 @@ Predictive Power Comparison
 
 The scikit-learn function LassoCV was used to test the predictive power of the ICA components. The results were cross-validated using Leave-One-Out (LOOCV) and the cross_val_score function. From this, the mean absolute error (MAE) and R2 for each trait were calculated. The same procedure was done for Principal Component Analysis (PCA), and a Partial Least Squares Regression was performed. The results of the three methods were then compared in order to determine the efficacy of using ICA to predict biological traits.
 
-Discussion
+## Discussion
 
 The aim of the project was to show that ICA can be used to accurately predict biological traits from a methylation dataset. Since ICA does not prefer any one component, it could have been used alongside more common data science methods such as PCA and PLS to group methylation data in meaningful ways. It was observed that ICA is a viable option on its own for predicting biological traits, and seemed to accurately predict certain markers, such as Neutrophil Bands and the sex of the individual. From this, it was possible to obtain individual contributing methylation sites. However, the model was not useful for predicting the less correlated traits. 
 The performance of the ICA model was lackluster. The model performed as well, or worse than the models using PCA and PLS. In addition to the lower accuracy, implementing ICA for static datasets like a methylation matrix is much more involved than using PCA and PLS. The inherent instability of the method also calls into question the quality of the results for less compact clusters. For these reasons, ICA is not a viable method for processing methylation datasets, or for predictive models. 
 
 
-References
+## References
 
 [1] A. Hyvärinen, E. Oja, (2000) Independent component analysis: algorithms and applications, Neural Networks, Volume 13, Issues 4–5, 411-430
 
